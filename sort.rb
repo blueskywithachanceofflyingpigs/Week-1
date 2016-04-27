@@ -1,7 +1,22 @@
 # Sort the array from lowest to highest
 def sort(arr)
-  arr.sort
+  n = arr.length
+  loop do
+    swapped = false
+
+    (n-1).times do |i|
+      if arr[i] > arr[i+1]
+        arr[i], arr[i+1] = arr[i+1], arr[i]
+        swapped = true
+      end
+    end
+
+    break if not swapped
+  end
+
+  arr
 end
+
 
 # Find the maximum 
 def maximum(arr)
